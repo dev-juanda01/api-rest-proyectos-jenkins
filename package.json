@@ -1,0 +1,30 @@
+{
+  "name": "api-rest-proyectos",
+  "version": "0.0.1",
+  "description": "API Rest que permite la gestión de los proyectos de diferentes niveles en una universidad",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./bin/server.js"
+  },
+  "keywords": [
+    "API",
+    "Rest",
+    "Node",
+    "JS",
+    "Express",
+    "MongoDB",
+    "Universidad",
+    "Gestión"
+  ],
+  "author": "@juanpenaloza",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^7.1.0",
+    "morgan": "^1.10.0"
+  }
+}
