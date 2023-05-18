@@ -1,3 +1,5 @@
+const routes = require("./routes/routes_etapas");
+
 const express = require("express"),
   morgan = require("morgan"),
   dotenv = require("dotenv").config(),
@@ -20,5 +22,6 @@ app
   );
 
 // Rutas
+app.use("/api/etapas", routes);
 
 module.exports = app;
