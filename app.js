@@ -14,6 +14,7 @@ app.set("port", port);
 // Middlewares
 app
   .use(bodyParser.urlencoded({ extended: false }))
+  .use(bodyParser.json())
   .use(morgan("dev"))
   .use(
     cors({
