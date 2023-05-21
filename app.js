@@ -1,4 +1,5 @@
-const routes = require("./routes/routes_etapas");
+const routesEtapas = require("./routes/routes_etapas"),
+  routesUniversidad = require("./routes/routes_universidad");
 
 const express = require("express"),
   morgan = require("morgan"),
@@ -23,6 +24,6 @@ app
   );
 
 // Rutas
-app.use("/api/etapas", routes);
+app.use("/api/etapas", routesEtapas).use("/api/universidad", routesUniversidad);
 
 module.exports = app;

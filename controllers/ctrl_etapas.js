@@ -3,9 +3,8 @@ const Etapas = require("../models/modelo_etapas");
 const readEtapas = async (req, res) => {
   try {
     const etapas = await Etapas.find({});
-    // console.log(etapas);
 
-    if (!etapas)
+    if (etapas.length === 0)
       return res.status(404).send({ msg: "No hay etapas registradas" });
 
     res.status(200).send({ etapas: etapas });
