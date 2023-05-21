@@ -1,27 +1,25 @@
-"use strict";
+const { Schema, model } = require("mongoose");
 
-const mongoose = require("mongoose"),
-  Schema = mongoose.Schema,
-  tipoProyectoSchema = Schema({
-    nombre: {
-      type: String,
-      required: true,
-      enum: [
-        "ENSAYO",
-        "ARTICULO",
-        "MONOGRAFIA",
-        "TRABAJO FINAL DE GRADO",
-        "TRABAJO FINAL DE ESPECIALIZACION",
-      ],
-    },
-    fechaCreacion: {
-      type: Date,
-      default: new Date(),
-    },
-    fechaActualizacion: {
-      type: Date,
-      default: new Date(),
-    },
-  });
+const TipoProyectos = Schema({
+  nombre: {
+    type: String,
+    required: [true, "El nombre es obligatorio"],
+    enum: [
+      "ENSAYO",
+      "ARTICULO",
+      "MONOGRAFIA",
+      "TRABAJO FINAL DE GRADO",
+      "TRABAJO FINAL DE ESPECIALIZACION",
+    ],
+  },
+  fechaCreacion: {
+    type: Date,
+    default: new Date(),
+  },
+  fechaActualizacion: {
+    type: Date,
+    default: new Date(),
+  },
+});
 
-module.exports = mongoose.model("TipoProyectos", tipoProyectoSchema);
+module.exports = model("TipoProyectos", TipoProyectos);
