@@ -2,19 +2,19 @@ const Proyectos = require("../models/modelo_proyectos");
 
 const readProyectos = async (req, res) => {
   try {
-    const proyectos = await Proyectos.find()
-      .populate({
-        path: "cliente",
-      })
-      .populate({
-        path: "tipo",
-      })
-      .populate({
-        path: "universidad",
-      })
-      .populate({
-        path: "etapa",
-      });
+    const proyectos = await Proyectos.find();
+    // .populate({
+    //   path: "cliente",
+    // })
+    // .populate({
+    //   path: "tipo",
+    // })
+    // .populate({
+    //   path: "universidad",
+    // })
+    // .populate({
+    //   path: "etapa",
+    // });
 
     if (proyectos.length === 0)
       return res.status(404).send({ msg: "No hay proyectos registrados" });

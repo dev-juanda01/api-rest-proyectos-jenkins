@@ -33,7 +33,7 @@ const Proyectos = Schema({
   cliente: {
     type: Schema.Types.ObjectId,
     ref: "Clientes",
-    // required: [true, "El cliente es obligatorio"],
+    required: [true, "El cliente es obligatorio"],
   },
   tipo: {
     type: Schema.Types.ObjectId,
