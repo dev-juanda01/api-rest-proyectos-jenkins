@@ -1,0 +1,13 @@
+version: "3.7"
+services:
+  api-rest-proyectos-micro:
+    container_name: api-rest-proyectos-micro
+    image: api-rest-proyectos-micro:v1
+    build:
+      context: .
+    ports:
+      - "3002:3002"
+    networks:
+      - api-rest-proyectos-micro
+networks:
+  api-rest-proyectos-micro:
