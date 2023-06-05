@@ -6,7 +6,22 @@ services:
     build:
       context: .
     ports:
-      - "3002:3002"
+      - "3002"
+    networks:
+      - api-rest-proyectos-micro
+  api-rest-proyectos-micro-2:
+    container_name: api-rest-proyectos-micro-2
+    image: api-rest-proyectos-micro:v1
+    ports:
+      - "3002"
+    networks:
+      - api-rest-proyectos-micro
+  balanceador-carga:
+    container_name: balanceador-carga
+    image: balanceador-carga:v1
+    build: ./balanceador
+    ports:
+      - "3004:80"
     networks:
       - api-rest-proyectos-micro
 networks:
