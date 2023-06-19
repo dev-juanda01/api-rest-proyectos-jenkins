@@ -34,14 +34,14 @@ pipeline {
         }
     }
 
-    post {
-        always {
-            emailext (
-                subject: "Estado del build: ${currentBuild.currentResult}",
-                body: "Se ha completado el build. Puede detallar en: ${env.BUILD_URL}",
-                to: "juan.penaloza@est.iudigital.edu.co",
-                from: "jenkins@iudigital.edu.co"
-            )
-        }
-    }
+    // post {
+    //     always {
+    //         emailext (
+    //             subject: "Estado del build: ${currentBuild.currentResult}",
+    //             body: "Se ha completado el build. Puede detallar en: ${env.BUILD_URL}",
+    //             to: "juan.penaloza@est.iudigital.edu.co",
+    //             from: "jenkins@iudigital.edu.co"
+    //         )
+    //     }
+    // }
 }
